@@ -24,7 +24,7 @@ export default function Hero() {
           color: '#4DB89E',
           marginBottom: '32px',
         }}>
-          Fakturaopfølgning & inkasso
+          Invoice follow-up &amp; debt collection
         </div>
 
         <h1 style={{
@@ -35,7 +35,7 @@ export default function Hero() {
           lineHeight: 1.05,
           marginBottom: '24px',
         }}>
-          Stop med at rykke manuelt. Lad Equity gøre det.
+          Stop chasing payments manually. Let Equity do it.
         </h1>
 
         <p style={{
@@ -46,7 +46,16 @@ export default function Hero() {
           maxWidth: '520px',
           margin: '0 auto 48px',
         }}>
-          Se hvad der er forfaldent, hvem der skylder, og hvad næste skridt er — alt synkroniseret direkte fra dit ERP-system.
+          See what&apos;s overdue, who owes, and what the next step is — all synced directly from your ERP system.
+        </p>
+
+        <p style={{
+          fontSize: '12px',
+          color: 'rgba(255,255,255,0.35)',
+          marginBottom: '32px',
+          letterSpacing: '0.01em',
+        }}>
+          Used by companies managing billions in receivables
         </p>
 
         <div style={{ display: 'flex', gap: '12px', alignItems: 'center', justifyContent: 'center' }}>
@@ -59,7 +68,7 @@ export default function Hero() {
             padding: '12px 28px',
             borderRadius: 'var(--rs)',
           }}>
-            Book en demo
+            Book a demo
           </Link>
           <Link href="#" style={{
             fontSize: '14px',
@@ -69,7 +78,7 @@ export default function Hero() {
             border: '1px solid rgba(255,255,255,0.15)',
             borderRadius: 'var(--rs)',
           }}>
-            Se hvordan det virker
+            See how it works
           </Link>
         </div>
 
@@ -78,7 +87,7 @@ export default function Hero() {
           color: 'rgba(255,255,255,0.2)',
           marginTop: '20px',
         }}>
-          Ingen binding. Onboarding tager under én dag.
+          No commitment. Onboarding takes less than one day.
         </p>
 
       </div>

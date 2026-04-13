@@ -14,7 +14,7 @@ export default function Navbar() {
       zIndex: 100,
     }}>
       <div style={{
-        fontWeight: 600,
+        fontWeight: 500,
         fontSize: '15px',
         color: '#fff',
         letterSpacing: '-0.3px',
@@ -23,7 +23,7 @@ export default function Navbar() {
       </div>
 
       <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-        {['Integrationer', 'Priser', 'Om os'].map(item => (
+        {['Integrations', 'Pricing', 'About'].map(item => (
           <Link key={item} href="#" style={{
             fontSize: '13px',
             color: 'rgba(255,255,255,0.5)',
@@ -45,7 +45,7 @@ export default function Navbar() {
           borderRadius: 'var(--rs)',
           marginLeft: '8px',
         }}>
-          Kontakt
+          Contact
         </Link>
       </div>
     </nav>
