@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section style={{
       background: 'linear-gradient(135deg, #0D3020 0%, #114239 50%, #1A5E52 100%)',
-      padding: '160px 48px 140px',
+      padding: '200px 48px 140px',
       textAlign: 'center',
       minHeight: '100vh',
       display: 'flex',
@@ -31,12 +31,16 @@ export default function Hero() {
         </div>
 
         <h1 style={{
-          fontSize: '56px',
+          fontSize: '48px',
           fontWeight: 500,
           letterSpacing: '-1.5px',
           color: '#fff',
           lineHeight: 1.05,
           marginBottom: '24px',
+          maxWidth: '700px',
+          margin: '0 auto 24px',
+          wordBreak: 'keep-all',
+          overflowWrap: 'break-word',
         }}>
           Stop chasing payments manually. Let Equity do it.
         </h1>
