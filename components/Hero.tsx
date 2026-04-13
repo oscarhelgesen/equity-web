@@ -4,9 +4,11 @@ export default function Hero() {
   return (
     <section style={{
       background: 'var(--g)',
-      padding: '96px 48px',
+      padding: '120px 48px 140px',
+      textAlign: 'center',
     }}>
-      <div style={{ maxWidth: '960px', margin: '0 auto' }}>
+      <div style={{ maxWidth: '720px', margin: '0 auto' }}>
+
         <div style={{
           display: 'inline-flex',
           alignItems: 'center',
@@ -16,53 +18,45 @@ export default function Hero() {
           borderRadius: 'var(--rx)',
           padding: '4px 14px',
           fontSize: '11px',
-          fontWeight: 700,
+          fontWeight: 600,
           textTransform: 'uppercase' as const,
           letterSpacing: '0.07em',
           color: '#4DB89E',
-          marginBottom: '24px',
+          marginBottom: '32px',
         }}>
           Fakturaopfølgning & inkasso
         </div>
 
         <h1 style={{
-          fontSize: '48px',
+          fontSize: '56px',
           fontWeight: 500,
-          letterSpacing: '-1px',
+          letterSpacing: '-1.5px',
           color: '#fff',
-          lineHeight: 1.1,
-          marginBottom: '20px',
-          maxWidth: '620px',
+          lineHeight: 1.05,
+          marginBottom: '24px',
         }}>
           Stop med at rykke manuelt. Lad Equity gøre det.
         </h1>
 
         <p style={{
-          fontSize: '16px',
-          color: 'rgba(255,255,255,0.5)',
-          maxWidth: '480px',
+          fontSize: '17px',
+          color: 'rgba(255,255,255,0.45)',
           lineHeight: 1.7,
-          marginBottom: '16px',
+          marginBottom: '48px',
+          maxWidth: '520px',
+          margin: '0 auto 48px',
         }}>
           Se hvad der er forfaldent, hvem der skylder, og hvad næste skridt er — alt synkroniseret direkte fra dit ERP-system.
         </p>
 
-        <p style={{
-          fontSize: '13px',
-          color: 'rgba(255,255,255,0.25)',
-          marginBottom: '40px',
-        }}>
-          Brugt af virksomheder der tilsammen håndterer milliarder i tilgodehavender
-        </p>
-
-        <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+        <div style={{ display: 'flex', gap: '12px', alignItems: 'center', justifyContent: 'center' }}>
           <Link href="#" style={{
             fontSize: '14px',
             fontWeight: 500,
             color: 'var(--g)',
             background: '#fff',
             textDecoration: 'none',
-            padding: '10px 24px',
+            padding: '12px 28px',
             borderRadius: 'var(--rs)',
           }}>
             Book en demo
@@ -71,7 +65,7 @@ export default function Hero() {
             fontSize: '14px',
             color: 'rgba(255,255,255,0.6)',
             textDecoration: 'none',
-            padding: '10px 24px',
+            padding: '12px 28px',
             border: '1px solid rgba(255,255,255,0.15)',
             borderRadius: 'var(--rs)',
           }}>
@@ -82,10 +76,11 @@ export default function Hero() {
         <p style={{
           fontSize: '12px',
           color: 'rgba(255,255,255,0.2)',
-          marginTop: '16px',
+          marginTop: '20px',
         }}>
           Ingen binding. Onboarding tager under én dag.
         </p>
+
       </div>
     </section>
   )
