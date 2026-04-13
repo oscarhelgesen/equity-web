@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
-import { Inter, DM_Mono } from 'next/font/google'
+import { Inter, DM_Mono, Geist } from 'next/font/google'
 import './globals.css'
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const inter = Inter({
   subsets: ['latin'],
@@ -26,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${dmMono.variable}`}>
+    <html lang="en" className={cn(inter.variable, dmMono.variable, "font-sans", geist.variable)}>
       <body>{children}</body>
     </html>
   )
