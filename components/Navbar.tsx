@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useState, useEffect, useRef } from 'react'
+import { Button } from '@/components/ui/button'
 
 const solutionItems = [
   { title: 'Payment reminders', subtitle: 'A/R direct to your bank account.' },
@@ -119,18 +120,7 @@ export default function Navbar() {
           }}>
             Log in
           </Link>
-          <Link href="#" style={{
-            fontSize: '13px',
-            fontWeight: 500,
-            color: '#fff',
-            border: '1px solid rgba(255,255,255,0.25)',
-            textDecoration: 'none',
-            padding: '7px 16px',
-            borderRadius: 'var(--rs)',
-            marginLeft: '4px',
-          }}>
-            Contact
-          </Link>
+          <Button size="sm" style={{ marginLeft: '4px' }}>Contact</Button>
         </div>
       </nav>
 

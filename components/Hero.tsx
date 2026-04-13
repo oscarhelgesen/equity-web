@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { Button } from '@/components/ui/button'
 
 export default function Hero() {
   return (
@@ -62,27 +62,18 @@ export default function Hero() {
         </p>
 
         <div style={{ display: 'flex', gap: '12px', alignItems: 'center', justifyContent: 'center' }}>
-          <Link href="#" style={{
-            fontSize: '14px',
-            fontWeight: 500,
-            color: 'var(--g)',
-            background: '#fff',
-            textDecoration: 'none',
-            padding: '12px 28px',
-            borderRadius: 'var(--rs)',
-          }}>
-            Book a demo
-          </Link>
-          <Link href="#" style={{
-            fontSize: '14px',
-            color: 'rgba(255,255,255,0.6)',
-            textDecoration: 'none',
-            padding: '12px 28px',
-            border: '1px solid rgba(255,255,255,0.15)',
-            borderRadius: 'var(--rs)',
-          }}>
+          <Button size="lg">Book a demo</Button>
+          <Button
+            variant="outline"
+            size="lg"
+            style={{
+              background: 'transparent',
+              borderColor: 'rgba(255,255,255,0.25)',
+              color: '#fff',
+            }}
+          >
             See how it works
-          </Link>
+          </Button>
         </div>
 
         <p style={{
