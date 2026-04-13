@@ -17,66 +17,52 @@ const integrationItems = [
 ]
 
 export default function Navbar() {
-  const [open, setOpen]       = useState(false)
+  const [open, setOpen]         = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const closeTimer              = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const closeTimer               = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10)
+    const onScroll = () => setScrolled(window.scrollY > 80)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const handleNavEnter = () => {
+  const clearClose = () => {
     if (closeTimer.current) clearTimeout(closeTimer.current)
   }
 
-  const handleNavLeave = () => {
+  const scheduleClose = () => {
     closeTimer.current = setTimeout(() => setOpen(false), 80)
   }
 
-  const handleDropdownEnter = () => {
-    if (closeTimer.current) clearTimeout(closeTimer.current)
-  }
-
-  const handleDropdownLeave = () => {
-    closeTimer.current = setTimeout(() => setOpen(false), 80)
-  }
-
-  const navBg      = scrolled ? 'var(--g)' : 'transparent'
-  const navShadow  = scrolled ? '0 1px 0 rgba(255,255,255,0.08)' : 'none'
-  const linkColor  = 'rgba(255,255,255,0.55)'
+  const linkColor = 'rgba(255,255,255,0.6)'
 
   return (
     <>
       <nav
-        onMouseEnter={handleNavEnter}
-        onMouseLeave={handleNavLeave}
+        onMouseEnter={clearClose}
+        onMouseLeave={scheduleClose}
         style={{
-          background: navBg,
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
           height: '64px',
           display: 'flex',
           alignItems: 'center',
-          position: 'sticky',
-          top: 0,
-          zIndex: 200,
-          boxShadow: navShadow,
-          transition: 'background 0.2s ease, box-shadow 0.2s ease',
+          zIndex: 100,
+          background: scrolled ? 'var(--g)' : 'transparent',
+          transition: 'background 0.25s ease',
         }}
       >
-        {/* Logo — left */}
+        {/* Logo */}
         <div style={{ paddingLeft: '64px', flexShrink: 0 }}>
-          <span style={{
-            fontWeight: 500,
-            fontSize: '15px',
-            color: '#fff',
-            letterSpacing: '-0.3px',
-          }}>
+          <span style={{ fontWeight: 500, fontSize: '15px', color: '#fff', letterSpacing: '-0.3px' }}>
             Equity
           </span>
         </div>
 
-        {/* Center links — absolutely positioned */}
+        {/* Center links */}
         <div style={{
           position: 'absolute',
           left: '50%',
@@ -86,7 +72,7 @@ export default function Navbar() {
           gap: '4px',
         }}>
           <button
-            onMouseEnter={() => { handleNavEnter(); setOpen(true) }}
+            onMouseEnter={() => { clearClose(); setOpen(true) }}
             style={{
               fontSize: '13px',
               color: open ? '#fff' : linkColor,
@@ -137,8 +123,7 @@ export default function Navbar() {
             fontSize: '13px',
             fontWeight: 500,
             color: '#fff',
-            background: 'rgba(255,255,255,0.12)',
-            border: '1px solid rgba(255,255,255,0.15)',
+            border: '1px solid rgba(255,255,255,0.25)',
             textDecoration: 'none',
             padding: '7px 16px',
             borderRadius: 'var(--rs)',
@@ -152,8 +137,8 @@ export default function Navbar() {
       {/* Full-width dropdown */}
       {open && (
         <div
-          onMouseEnter={handleDropdownEnter}
-          onMouseLeave={handleDropdownLeave}
+          onMouseEnter={clearClose}
+          onMouseLeave={scheduleClose}
           style={{
             position: 'fixed',
             top: '64px',
@@ -162,7 +147,7 @@ export default function Navbar() {
             background: 'var(--g)',
             borderTop: '1px solid rgba(255,255,255,0.08)',
             padding: '32px 64px',
-            zIndex: 199,
+            zIndex: 99,
             display: 'grid',
             gridTemplateColumns: '1fr 1fr 1fr',
             gap: '48px',

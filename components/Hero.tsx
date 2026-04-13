@@ -4,10 +4,13 @@ export default function Hero() {
   return (
     <section style={{
       background: 'linear-gradient(135deg, #0D3020 0%, #114239 50%, #1A5E52 100%)',
-      padding: '120px 48px 140px',
+      padding: '160px 48px 140px',
       textAlign: 'center',
+      minHeight: '100vh',
+      display: 'flex',
+      alignItems: 'center',
     }}>
-      <div style={{ maxWidth: '720px', margin: '0 auto' }}>
+      <div style={{ maxWidth: '720px', margin: '0 auto', width: '100%' }}>
 
         <div style={{
           display: 'inline-flex',
